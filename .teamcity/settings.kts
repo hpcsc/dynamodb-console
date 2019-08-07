@@ -47,8 +47,13 @@ object Build : BuildType({
         dotnetBuild {
             projects = "test-dynamodb.csproj"
         }
-        dotnetRun {
-            param("dotNetCoverage.dotCover.home.path", "%teamcity.tool.JetBrains.dotCover.CommandLineTools.DEFAULT%")
+        dotnetTest {
+            projects = "test-dynamodb.csproj"
+        }
+        dockerBuild {
+            namesAndTags = "hpcsc/test-dynamodb:0.0.1"
+
+            path("./Dockerfile")
         }
     }
 
