@@ -3,11 +3,13 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp2.2</TargetFramework>
-    <RootNamespace>test_dynamodb</RootNamespace>
+    <RootNamespace>DynamoDB.Console</RootNamespace>
+    <AssemblyName>dynamodb-console</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="AWSSDK.DynamoDBv2" Version="3.3.101.47" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="2.2.4" />
   </ItemGroup>
 
 </Project>
