@@ -7,11 +7,21 @@ services:
     ports:
       - 8000:8000
 
+  migration:
+    build:
+      context: .
+      dockerfile: migration.Dockerfile
+    depends_on:
+      - dynamodb
+    environment:
+      - AWS_ACCESS_KEY_ID
+      - AWS_SECRET_ACCESS_KEY
+      
   console:
     build:
       context: .
     depends_on:
-      - dynamodb
+      - migration
     environment:
       - "DYNAMO_URL=http://dynamodb:8000"
       - AWS_ACCESS_KEY_ID

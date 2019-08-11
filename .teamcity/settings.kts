@@ -42,16 +42,16 @@ object Build : BuildType({
 
     steps {
         dotnetRestore {
-            projects = "test-dynamodb.csproj"
+            projects = "dynamodb-console.csproj"
         }
         dotnetBuild {
-            projects = "test-dynamodb.csproj"
+            projects = "dynamodb-console.csproj"
         }
         dotnetTest {
-            projects = "test-dynamodb.csproj"
+            projects = "dynamodb-console.csproj"
         }
         dockerBuild {
-            namesAndTags = "hpcsc/test-dynamodb:0.0.1"
+            namesAndTags = "hpcsc/dynamodb-console:0.0.1"
 
             path("./Dockerfile")
         }
